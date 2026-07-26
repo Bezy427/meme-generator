@@ -1,19 +1,20 @@
+import Contact from "./Contact";
 
-function App() {
-  const hours = new Date().getHours()
-  let timeOfDay
-
-  if (hours < 12) {
-    timeOfDay = "morning"
-  } else if (hours >= 12 && hours < 17) {
-    timeOfDay = "afternoon"
-  } else if (hours < 21) {
-    timeOfDay = "evening"
-  } else {
-    timeOfDay = "night"
-  }
+function App(props) {
+  
 
   return (
-    <h1>Good {timeOfDay}</h1>)
+    <div className="contacts">
+      <Contact 
+        img="../images/mr-whiskerson.png"
+        name="Mr. Whiskerson"
+        phone="(212) 555 1234"
+        email="mr.whickerson@catnap.com"
+      />
+      <Contact />
+      <Contact />
+      <Contact />
+    </div>
+  )
 }
 export default App;
