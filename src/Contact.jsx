@@ -21,13 +21,3 @@ export default function Contact({img, name, phone, email}) {
         </article>
     )
 }
-
-// const person = {
-//     img: "./images/mr-whickerson.png",
-//     name: "Mr. Whickerson",
-//     phone: "(800) 555-1234",
-//     email: "mr.whcikerson@catnap.com"
-// }
-
-// const {img, name} = person
-// console.log(img)
