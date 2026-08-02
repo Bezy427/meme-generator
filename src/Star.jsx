@@ -1,4 +1,4 @@
-export default function Star() {
+export default function Star(props) {
     let starIcon = props.isFilled ? starFilled : starEmpty
 
     return (
