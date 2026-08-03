@@ -1,31 +1,31 @@
 import {useState} from "react"
 
 export default function Main() {
-    const [ingredients, setIngredients] = useState(["all the main spices", "pasta", "ground beef", "tomato paste"])
-    const [recipeShown, setRecipeShown] = useState(false)
+    // const [ingredients, setIngredients] = useState(["all the main spices", "pasta", "ground beef", "tomato paste"])
+    // const [recipeShown, setRecipeShown] = useState(false)
 
-    const ingredientsListItems = ingredients.map(i => (
-      <li key={i}>{i}</li>  
-    ))
+    // const ingredientsListItems = ingredients.map(i => (
+    //   <li key={i}>{i}</li>  
+    // ))
 
-    function toggleRecipeShown() {
-        setRecipeShown(prevRecipe => !prevRecipe)
-    }
+    // function toggleRecipeShown() {
+    //     setRecipeShown(prevRecipe => !prevRecipe)
+    // }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
-        const newIngredient = formData.get("ingredient")
-        setIngredients(prevIngredients => [
-            ...prevIngredients,
-            newIngredient
-            ]
-        )
-    }
+    // function handleSubmit(event) {
+    //     event.preventDefault()
+    //     const formData = new FormData(event.currentTarget)
+    //     const newIngredient = formData.get("ingredient")
+    //     setIngredients(prevIngredients => [
+    //         ...prevIngredients,
+    //         newIngredient
+    //         ]
+    //     )
+    // }
 
     return (
         <main>
-            <form onSubmit={handleSubmit} className="add-ingredient-form">
+            {/* <form onSubmit={handleSubmit} className="add-ingredient-form">
                 <input 
                     type="text"
                     placeholder="e.g. oregano"
@@ -76,7 +76,22 @@ export default function Main() {
                         <li>Serve hot, garnished with additional fresh basil or grated Parmesan cheese if desired.</li>
                     </ol>
                 </article>
-            </section>}
+            </section>} */}
+            <div className="form">
+                <label>Top Text
+                    <input 
+                        type="text" 
+                        placeholder="Walk into Mordor"
+                        name="bottomText"
+                    />
+                </label>
+                <button>Get a new meme image </button> 
+            </div>
+            <div className="meme">
+                <img src="http://i.imgflip.com/Ibig.jpg" alt="" />
+                <span className="top">One does not simply</span>
+                <span className="bottom">Walk into Mordor</span>
+            </div>
         </main>
     )
 }
