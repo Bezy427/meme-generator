@@ -1,23 +1,79 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Header from "./Header";
 import Main from "./Main"
 import Count from "./Count";
 import Body from "./Body";
 import Headers from "./Headers";
+import WindowTracker from "./WindowTracker";
+import Die from "./Die";
+import { nanoid } from "nanoid";
 
 export default function App() {
   // const [unreadMessages, setUnreadMessages] = useState(["a", "b"])
-  const [userName, setUserName] = useState("Joe")
+  // const [userName, setUserName] = useState("Joe")
+  // const [starWarsData, setStarWarsData] = useState({})
+  // const [count, setCount] = useState(1)
+  // const [show, setShow] = useState(true)
+
+  // function toggle() {
+  //    setShow(prevShow => !prevShow)
+  // }
+  // console.log("Rendered!")
+
+  // useEffect(() => {
+  //   console.log("Effect ran")
+  //   fetch(`https://swapi.dev/api/people/${count}`)
+  //     .then(res => res.json())
+  //     .then(data => setStarWarsData(data))
+  // }, [count])
+
+  const [dice, setDice] = useState(generateAllNewDice)
+
+  function generateAllNewDice() {
+    return new Array(10)
+      .fill(0)
+      .map(() => ({
+        value: Math.ceil(Math.random() * 6), 
+        isHeld: false,
+        id: nanoid 
+      }))
+  }
+
+  function rollDice() {
+    setDice(generateAllNewDice)
+  }
+
+  const diceElements = dice.map(
+    dieObject => <Die key={dieObject.id} value={dieObject.value} isHeld={dieObject}/>
+  )
 
   return (
     // <>
     //     <Header />
     //     <Main />
+
                  
     // </>
-    <>
-      <Headers userName={userName} />
-      <Body userName={userName} />
-    </>
+    // <>
+    //   <Headers userName={userName} />
+    //   <Body userName={userName} />
+    // </>
+    // <div>
+    //   <h2>The count is {count}</h2>
+    //   <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+    //   <prev>{JSON.stringify(starWarsData, null, 2)}</prev>
+    // </div>
+    // <main className="container">
+    //   <button onClick={toggle}>
+    //      Toggle WindowTracker
+    //   </button>
+    //   {show && <WindowTracker />}
+    // </main>
+    <main>
+      <div className="dice-container">
+        {diceElements}
+      </div>
+      <button className="roll-dice" onClick={rollDice}>Roll</button>
+    </main>
   )
 } 
