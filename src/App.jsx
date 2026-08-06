@@ -28,12 +28,13 @@ export default function App() {
   //     .then(data => setStarWarsData(data))
   // }, [count])
 
-  const [dice, setDice] = useState(generateAllNewDice)
+  const [dice, setDice] = useState(() => generateAllNewDice())
 
   const gameWon = dice.every(die => die.isHeld) &&
-       dice.every(die => die.value === dice[0].value) 
+       dice.every(die => die.value === dice[0].value)   
 
   function generateAllNewDice() {
+    console.log("generateAllNewDice was called!")
     return new Array(10)
       .fill(0)
       .map(() => ({
@@ -44,11 +45,15 @@ export default function App() {
   }
 
   function rollDice() {
-    setDice(oldDice => oldDice.map(die => 
-      die.isHeld ?
-        die :
-        { ...die, value: Math.ceil(Math.random() * 6)}
-    ))
+    if(!gameWon) {
+        setDice(oldDice => oldDice.map(die => 
+          die.isHeld ?
+            die :
+            { ...die, value: Math.ceil(Math.random() * 6) }
+        ))
+    } else {
+        setDice(generateAllNewDice())
+    }
   }
 
   function hold(id) {
