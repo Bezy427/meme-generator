@@ -5,7 +5,7 @@ export default function Entry() {
                 <img className="main-image" src="https://scrimba.com/links/travel-journal-japan-image-url" alt="mount fuji" />
             </div>
             <div className="info-container">
-                <img className="marker" src="../images/marker.png" alt="map marker icon" />
+                <img className="marker" src="src/images/marker.png" alt="map marker icon" />
                 <span className="country">Japan</span>
                 <a href="https://www.google.com/maps/place/Mount+Fuji/@35.3606421,138.7170637,
                 15z/data=!3ml!4b1!4m6!3m5!1s0x6019629a42fdc899:0xa6a1fcc916f3a4df!8m2!3d35.
