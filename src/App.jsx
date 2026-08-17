@@ -4,22 +4,26 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 export default function App() {
-  const [isGoingOut, setIsGoingOut] = useState(true)
+  const [myFavoriteThings, setMyFavoriteThings] = useState([])
 
-  // function toggleIsGoingOut() {
-  //   setIsGoingOut(prevCount)
-  // }
+  const allFavoriteThings = ["raindrops and roses", "kittens", "whiskers", "fire"]
+  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
 
-  function changeMind() {
-    setIsGoingOut(prev => !prev)
+  function addFavoriteThings() {
+    setMyFavoriteThings(
+      prevFav => [
+        ...prevFav, 
+        allFavoriteThings[prevFav.length]
+      ]
+    )
   }
 
   return (
     <main>
-      <div>
-        <h2>Do i feel like going out tonight?</h2>
-        <button onClick={changeMind} className="value" aria-label={`Current answer is ${isGoingOut ? "Yes" : "No"}. Click to change it.`}>{isGoingOut ? "Yes" : "No"}</button>
-      </div>
+      <button onClick={addFavoriteThings}>Add item</button>
+      <section aria-live="polite">
+        {thingsElements}
+      </section>
     </main>
     // <>
     //   <Header />
