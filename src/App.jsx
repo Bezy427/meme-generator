@@ -4,22 +4,21 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const [isGoingOut, setIsGoingOut] = useState(true)
 
-  function add() {
-    setCount(prevCount => prevCount + 1)
-  }
+  // function toggleIsGoingOut() {
+  //   setIsGoingOut(prevCount)
+  // }
 
-  function minus() {
-    setCount(prevCount => prevCount - 1)
+  function changeMind() {
+    setIsGoingOut(prev => !prev)
   }
 
   return (
     <main>
       <div>
-        <button onClick={minus} className="minus">-</button>
-        <h2>{count}</h2>
-        <button onClick={add} className="minus">+</button>
+        <h2>Do i feel like going out tonight?</h2>
+        <button onClick={changeMind} className="value" aria-label={`Current answer is ${isGoingOut ? "Yes" : "No"}. Click to change it.`}>{isGoingOut ? "Yes" : "No"}</button>
       </div>
     </main>
     // <>
