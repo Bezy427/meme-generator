@@ -4,18 +4,16 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 export default function App() {
-  const [myFavoriteThings, setMyFavoriteThings] = useState([])
+  const [contact, setContact] = useState({
+    firstName = "John",
+    lastName = "Doe",
+    phone: "+1 (212) 555-1212",
+    email: "itsmyrealname@example.com",
+    isFavorite: false
+  })
 
-  const allFavoriteThings = ["raindrops and roses", "kittens", "whiskers", "fire"]
-  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
-
-  function addFavoriteThings() {
-    setMyFavoriteThings(
-      prevFav => [
-        ...prevFav, 
-        allFavoriteThings[prevFav.length]
-      ]
-    )
+  function toggleFavorite() {
+    console.log("Toggle Favorite")
   }
 
   return (
