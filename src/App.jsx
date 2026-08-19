@@ -18,7 +18,10 @@ export default function App() {
   let starIcon = contact.isFavorite ? starFilled : starEmpty;
 
   function toggleFavorite() {
-    console.log("Toggle Favorite")
+    setContact(prevContact => ({
+		...prevContact,
+		isFavorite: !prevContact.isFavorite
+	}))
   }
 
   return (
@@ -31,13 +34,13 @@ export default function App() {
         <div className="info">
           <button
             onClick={toggleFavorite}
-            aria-pressed= {contact.isFavorite ? "true" : "false"}
-            aria-label={contact.isFavorite ? "Add to favorites" : "Remove from favorites"}
+            aria-pressed={contact.isFavorite}
+            aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
             className="favorite-button"
           >
             <img 
               src={starIcon} 
-              alt="empty star icon" 
+              alt={contact.isFavorite ? "filled star icon" : "empty star icon"} 
               className="favorite" 
             />
           </button>
