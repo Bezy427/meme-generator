@@ -24,7 +24,7 @@ main {
 }
 
 .card .avatar {
-    width: 10%;
+    width: 100%;
     padding: 10%;
     padding-bottom: 0;
 }
