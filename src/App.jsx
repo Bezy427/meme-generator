@@ -2,6 +2,9 @@ import { useState } from "react";
 import Entry from "./components/Entry";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import avatar from "./images/avatar.png";
+import starEmpty from "./images/star-empty.png";
+import starFilled from "./images/star-filled.png";
 
 export default function App() {
   const [contact, setContact] = useState({
@@ -20,7 +23,7 @@ export default function App() {
     <main>
       <article className="card">
         <img 
-          src="avatar" 
+          src={avatar} 
           alt="User profile picture of John Doe" 
         />
         <div className="info">
@@ -36,9 +39,10 @@ export default function App() {
             />
           </button>
           <h2 className="name">
-            John Doe
+            {contact.firstName} {contact.lastName}
           </h2>
-          <p className="contact">+1 (212) 555-1212</p>
+          <p className="contact">{contact.phone}</p>
+          <p className="contact">{contact.email}</p>
         </div>
       </article>
     </main>

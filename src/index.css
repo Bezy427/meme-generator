@@ -1,86 +1,60 @@
-html, body {
-    margin: 0;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Inter;
+    background-color: #0C4A6E;
+    margin: 0;
+    font0family: "Inter", snas-serif;
 }
 
-.container {
-    margin: 45px 40px;
-}
-
-header {
-    background: #F55A5A;
+main {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    height: 55px;
 }
 
-header > img {
-    width: 24px;
-    margin-right: 7px;
+.card {
+    background-color: white;
+    width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    height: 350px;
 }
 
-header > h1 {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-article.journal-entry {
-    display: flex;
-}
-
-article.journal-entry .marker {
-    width: 18px;
-    margin-right: 4px;
-}
-
-article.journal-entry .main-image-container {
-    width: 125px;
-    height: 168px;
-    overflow: hidden;
-    border-radius: 5px;
-    flex-shrink: 0;
-    margin-right: 19px;
-}
-
-article.journal-entry .main-image {
-    height: 100%;
+.card .avatar {
     width: 100%;
-    object-fit: cover;
+    padding: 10%;
+    padding-bottom: 0;
 }
 
-.info-container span.country {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    margin-right: 12px;
+.card .name {
+    margin-block: 13px;
+    color: #333333;
 }
 
-.info-container a {
-    color: #2B283A;
-    font-size: 0.7rem;
+.card .info {
+    padding: 10px;
 }
 
-.info-container a:visited {
-    color: #918E9B;
+.card .favorite {
+    width: 25px;
+    cursor: pointer;
 }
 
-.info-container h2.entry-title {
-    margin-top: 7px;
-    margin-bottom: 17px;
+.card .contact {
+    font-size: 0.75rem;
+    color: gray;
+    margin-block: 7px;
 }
 
-.info-container p.trip-dates {
-    font-weight: bold;
+.card .favorite-button {
+    border: none;
+    background: transparent;
 }
 
-.info-container p.entry-text {
-    line-height: 1.5;
-    font-size: 0.8rem;
-    display: -webkit-box;
-    -webkit-line-orient: vertical;
-    overflow: hidden;
+.card .favorite-button:active {
+    transform: none;
+    box-shadow: none;
 }
