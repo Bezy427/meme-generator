@@ -18,10 +18,29 @@ export default function App() {
 
   return (
     <main>
-      <button onClick={addFavoriteThings}>Add item</button>
-      <section aria-live="polite">
-        {thingsElements}
-      </section>
+      <article className="card">
+        <img 
+          src="avatar" 
+          alt="User profile picture of John Doe" 
+        />
+        <div className="info">
+          <button
+            onClick={toggleFavorite}
+            aria-pressed={false}
+            className="favorite-button"
+          >
+            <img 
+              src={starEmpty} 
+              alt="empty star icon" 
+              className="favorite" 
+            />
+          </button>
+          <h2 className="name">
+            John Doe
+          </h2>
+          <p className="contact">+1 (212) 555-1212</p>
+        </div>
+      </article>
     </main>
     // <>
     //   <Header />
