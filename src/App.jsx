@@ -74,6 +74,22 @@ export default function App() {
 			<input id="password" type="password" name="password" />
 			<br />
 
+			<fieldset>
+				<legend>Employment Status:</legend>
+				<label>
+					<input type="radio" name="employmentStatus" />
+					Unemployed
+				</label>
+				<label>
+					<input type="radio" name="employmentStatus" />
+					Part-Time
+				</label>
+				<label>
+					<input type="radio" name="employmentStatus" />
+					Full-Time
+				</label>
+			</fieldset>
+
 			<button>Submit</button>
 		</form>
 	</section>
