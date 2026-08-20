@@ -26,7 +26,9 @@ export default function App() {
   function signup(formData) {
 	const email = formData.get("email")
 	const password = formData.get("password")
+	const employmentStatus = formData.get("employmentStatus")
 	console.log(password)
+	console.log(employmentStatus)
   }	
 
   return (
