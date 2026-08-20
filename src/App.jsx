@@ -110,7 +110,8 @@ export default function App() {
 			</fieldset>
 
 			<label htmlFor="favColor">What is your favorite color?</label>
-			<select name="favColor" id="favColor">
+			<select name="favColor" id="favColor" defaultValue="" required>
+				<option value="" disabled>-- Choose a color --</option>
 				<option value="red">Red</option>
 				<option value="orange">Orange</option>
 				<option value="yellow">Red</option>
