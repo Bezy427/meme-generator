@@ -14,7 +14,7 @@ export default function App() {
 //     email: "itsmyrealname@example.com",
 //     isFavorite: true
 //   })
-const [unreadMessages, setUnreadMessages] = useState(["a", "b"])
+const [messages, setMessages] = useState(["a"])
 
 
 //   let starIcon = contact.isFavorite ? starFilled : starEmpty;
@@ -35,8 +35,17 @@ const [unreadMessages, setUnreadMessages] = useState(["a", "b"])
 // 	console.log(allData)
 //   }	
 
+	function determineText() {
+		if (messages.length === 0) {
+			return "You're all caught up!"
+		} else if (messages.length === 1) {
+			return "You've 1 unread message"
+		} else {
+			return `You've ${messages.length} unread messages`
+		}
+	}
 
-  return (
+  	return (
     // <main>
     //   <article className="card">
     //     <img 
@@ -129,9 +138,8 @@ const [unreadMessages, setUnreadMessages] = useState(["a", "b"])
 	// 	</form>
 	// </section>
 
-	<div>
-		{unreadMessages.length && <h2>You have {unreadMessages.length} unread messages!</h2>}
-		
-	</div>
+		<div>
+			<h1>{determineText()}</h1>		
+		</div>
   )
 }
