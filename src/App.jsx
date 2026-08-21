@@ -1,7 +1,7 @@
 import { use, useState } from "react";
 import Entry from "./components/Entry";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Main from "./main";
 import avatar from "./images/avatar.png";
 import starEmpty from "./images/star-empty.png";
 import starFilled from "./images/star-filled.png";
@@ -14,7 +14,7 @@ export default function App() {
 //     email: "itsmyrealname@example.com",
 //     isFavorite: true
 //   })
-const [messages, setMessages] = useState(["a"])
+// const [messages, setMessages] = useState(["a"])
 
 
 //   let starIcon = contact.isFavorite ? starFilled : starEmpty;
@@ -35,15 +35,15 @@ const [messages, setMessages] = useState(["a"])
 // 	console.log(allData)
 //   }	
 
-	function determineText() {
-		if (messages.length === 0) {
-			return "You're all caught up!"
-		} else if (messages.length === 1) {
-			return "You've 1 unread message"
-		} else {
-			return `You've ${messages.length} unread messages`
-		}
-	}
+	// function determineText() {
+	// 	if (messages.length === 0) {
+	// 		return "You're all caught up!"
+	// 	} else if (messages.length === 1) {
+	// 		return "You've 1 unread message"
+	// 	} else {
+	// 		return `You've ${messages.length} unread messages`
+	// 	}
+	// }
 
   	return (
     // <main>
@@ -138,8 +138,9 @@ const [messages, setMessages] = useState(["a"])
 	// 	</form>
 	// </section>
 
-		<div>
-			<h1>{determineText()}</h1>		
-		</div>
+		// <div>
+		// 	<h1>{determineText()}</h1>		
+		// </div>
+		<Main />
   )
 }
